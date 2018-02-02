@@ -1,3 +1,13 @@
+# Star Dust Demo
+
+A unity project that exhibits a simple implementation of compute shaders for a compelling VR experience.
+
+![Star Dust Demo](https://raw.githubusercontent.com/Erupac/StarDustDemo/master/Images/20180126172612_1.jpg)
+![Star Dust Demo](https://raw.githubusercontent.com/Erupac/StarDustDemo/master/Images/20180126172842_1.jpg)
+![Star Dust Demo](https://raw.githubusercontent.com/Erupac/StarDustDemo/master/Images/20180126173000_1.jpg)
+![Star Dust Demo](https://raw.githubusercontent.com/Erupac/StarDustDemo/master/Images/20180128184002_1.jpg)
+![Star Dust Demo](https://raw.githubusercontent.com/Erupac/StarDustDemo/master/Images/20180128200615_1.jpg)
+
 # Controls
 The right contoller will have a small ghosty orb floating above it. If the ghosty orb is floating above your left controller, switch the controllers around.
 
