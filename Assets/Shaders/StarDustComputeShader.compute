@@ -1,0 +1,32 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+#pragma kernel Reset
+
+struct Particle {
+	float3 position;
+	float3 velocity;
+};
+
+#include "UnityCG.cginc"
+RWStructuredBuffer<Particle> particleBuffer;
+StructuredBuffer<Particle> resetBuffer;
+
+float4 gravityObjectPosition;
+float acceleration;
+float damping;
+float deltaTime;
+
+[numthreads(256,1,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+	float3 dir = normalize(gravityObjectPosition.xyz - particleBuffer[id.x].position);
+
+	particleBuffer[id.x].position += deltaTime * particleBuffer[id.x].velocity;
+	particleBuffer[id.x].velocity += acceleration * dir * deltaTime - damping * particleBuffer[id.x].velocity * deltaTime;
+}
+
+[numthreads(256, 1, 1)]
+void Reset(uint3 id : SV_DispatchThreadID)
+{
+	particleBuffer[id.x] = resetBuffer[id.x];
+}
